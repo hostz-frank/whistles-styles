@@ -1,0 +1,83 @@
+.whistles {
+	clear:       both;
+	width:       100%;
+	margin:      0 0 1.5rem;
+	font-family: Georgia, sans-serif;
+	line-height: 1.5;
+}
+
+.whistles::after,
+.whistle-content::after {
+	content:    ".";
+	display:    block;
+	height:     0;
+	clear:      both;
+	visibility: hidden;
+}
+
+.whistle-title:hover {
+	cursor: pointer;
+}
+
+.whistle-content {
+	overflow: hidden;
+}
+
+/**
+ * Tabs
+ */
+
+/* Wraps the entire tabbed section. */
+.tabs-default {}
+
+	/* Unordered list. */
+	.tabs-default .whistles-tabs-nav {
+		list-style: none;
+		margin: 0;
+	}
+
+		/* Individual list item. */
+		.tabs-default .whistles-tabs-nav li {
+			display: inline-block;
+		}
+
+			/* Link within list item. */
+			.tabs-default .whistles-tabs-nav li a {
+				display:            inline-block;
+				padding:            0.5rem 1.5rem;
+				font-size:          0.75em;
+				font-family:        Arial, sans-serif;
+				font-weight:        bold;
+				color:              #777;
+				background:         #f5f5f5;
+				border:             1px solid #ececec;
+				border-right-width: 0;
+				text-decoration:    none;
+			}
+
+			.tabs-default .whistles-tabs-nav li:last-child a {
+				border-right-width: 1px;
+			}
+
+			.tabs-default .whistles-tabs-nav li a:hover {
+				color:      #555;
+				background: #f9f9f9;
+			}
+			.tabs-default .whistles-tabs-nav li[aria-selected="true"] a {
+				color:               #555;
+				background:          #fff;
+				border-bottom-color: #fff;
+			}
+
+	/* Wraps all of the tab content panels. */
+	.tabs-default .whistles-tabs-wrap {
+		margin:     -1px 0 0;
+		padding:    1.5rem 1.5rem 0 1.5rem;
+		color:      #666;
+		background: #fff;
+		border:     1px solid #ececec;
+	}
+
+		/* Individual tab content. */
+		.whistles-tabs-wrap .whistle-content {}
+

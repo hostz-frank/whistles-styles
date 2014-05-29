@@ -155,4 +155,37 @@ function whistles_styles_extend_allowed_types( $allowed_types ) {
 	return $allowed_types;
 }
 add_filter( 'whistles_allowed_types', 'whistles_styles_extend_allowed_types' );
+
+/**
+ * AJAX callback to provide whistle content only.
+ *
+ * Called by admin-ajax.php?action=whistle_content&amp;id=???
+ * inside wp-content/whi-style/class.* files.
+ */
+function whistles_styles_get_post_ajax() {
+	if( isset( $_GET['id'] ) ) {
+		$post = get_post( intval( $_GET['id'] ) );
+		print do_shortcode( $post->post_content ) . whistles_styles_edit_whistle_link( $_GET['id'] );
+	}
+	die();
+}
+// This "wp_ajax_" action prefix works for authenticated users only.
+add_action( 'wp_ajax_whistle_content', 'whistles_styles_get_post_ajax' );
+
+/**
+ * Return a whistle edit link if the user is allowed to edit whistles.
+ */
+function whistles_styles_edit_whistle_link( $post_id ) {
+	if( current_user_can( 'edit_whistles' ) ) {
+		$edit_link = apply_filters(
+			'whistles-styles-edit-link-on-meditabs',
+			'<div class="whistles-edit-link"><a class="post-edit-link" href="' . 
+				admin_url( 'post.php?post=' . (int)$post_id . '&amp;action=edit' ) .
+				'" target="_blank">' . __('Edit whistle', 'whistles-styles') . ' →</a></div>'
+		);
+	} else {
+		$edit_link = '';
+	}
+	return $edit_link;
+}
 ?>

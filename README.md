@@ -16,6 +16,11 @@ This plugin also allows to incorporate existing external styles for tabs, accord
 
 ## Changelog
 
+### Version 0.3
+
+* Add plugin headers for Github Updater
+* AJAXed whistle content
+
 ### Version 0.2
 
 * Initial release.

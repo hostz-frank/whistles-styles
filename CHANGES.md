@@ -1,5 +1,10 @@
 ### Änderungsprotokoll: Whistles Styles
 
+#### Version 0.4
+
+* Bugfix: removed extension ".git" from update source.
+
+
 #### Version 0.3
 
 * Add plugin headers for Github Updater

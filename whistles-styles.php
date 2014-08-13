@@ -2,11 +2,10 @@
 /**
  * Plugin Name: Whistles Styles
  * Description: Apply styles to tabs, toggles, accordions, created with the great Whistles plugin. Plug in styles and also new types of content collections, like sliders or portfolios.
- * Version: 0.3
+ * Version: 0.4
  * Author: Frank St&uuml;rzebecher <frank@netzklad.de>
  * Author URI: http://netzklad.de
- * GitHub Plugin URI: https://github.com/medizinmedien/whistles-styles.git
- * GitHub Branch: master
+ * GitHub Plugin URI: https://github.com/medizinmedien/whistles-styles
  *
  * This program is free software; you can redistribute it and/or modify it under the terms of the GNU 
  * General Public License as published by the Free Software Foundation; either version 2 of the License, 

@@ -18,7 +18,7 @@
  * to the Free Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
  *
  * @package   Whistles Styles
- * @version   0.3
+ * @version   0.5
  * @author    Frank Stürzebecher <frank@netzklad.de>
  * @copyright Copyright (c) 2013, Frank Stürzebecher
  * @license   http://www.gnu.org/licenses/old-licenses/gpl-2.0.html

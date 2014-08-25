@@ -1,5 +1,10 @@
 ### Änderungsprotokoll: Whistles Styles
 
+#### Version 0.5
+
+* Solve issues with SSL pages when WP-'siteurl' is defined as non-https.
+
+
 #### Version 0.4
 
 * Bugfix: removed extension ".git" from update source.

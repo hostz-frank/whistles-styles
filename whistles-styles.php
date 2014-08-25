@@ -28,13 +28,19 @@
 	if( !defined( 'ABSPATH' ) )
 		exit;
 
+	// Solve issues with SSL pages when WP-'siteurl' is defined as non-https.
+	$wp_content_url = WP_CONTENT_URL;
+	if( isset( $_SERVER["HTTPS"] ) && $_SERVER["HTTPS"] == 'on' ) {
+		$wp_content_url = str_replace( 'http://', 'https://', WP_CONTENT_URL );
+	}
+
 	/* Path constants. */
 	define( 'WHISTLES_STYLES', '1' );
 	define( 'WHISTLES_STYLES_VERSION', '0.3' );
 	define( 'WHISTLES_STYLES_PLUGIN_DIR', trailingslashit( dirname( __FILE__ ) ) );
 	define( 'WHISTLES_STYLES_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
 	define( 'WHISTLES_STYLES_CUSTOM_DIR', WP_CONTENT_DIR . '/whi-styles/' );
-	define( 'WHISTLES_STYLES_CUSTOM_URL', WP_CONTENT_URL . '/whi-styles/' );
+	define( 'WHISTLES_STYLES_CUSTOM_URL', $wp_content_url . '/whi-styles/' );
 
 	/* Load, depending on context. */
 	if( is_admin() ) {

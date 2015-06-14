@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Whistles Styles
  * Description: Apply styles to tabs, toggles, accordions, created with the great Whistles plugin. Plug in styles and also new types of content collections, like sliders or portfolios.
- * Version: 0.4
+ * Version: 0.6
  * Author: Frank St&uuml;rzebecher <frank@netzklad.de>
  * Author URI: http://netzklad.de
  * GitHub Plugin URI: https://github.com/medizinmedien/whistles-styles
@@ -18,7 +18,7 @@
  * to the Free Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
  *
  * @package   Whistles Styles
- * @version   0.5
+ * @version   0.6
  * @author    Frank Stürzebecher <frank@netzklad.de>
  * @copyright Copyright (c) 2013, Frank Stürzebecher
  * @license   http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
@@ -36,11 +36,11 @@
 
 	/* Path constants. */
 	define( 'WHISTLES_STYLES', '1' );
-	define( 'WHISTLES_STYLES_VERSION', '0.3' );
+	define( 'WHISTLES_STYLES_VERSION', '0.6' );
 	define( 'WHISTLES_STYLES_PLUGIN_DIR', trailingslashit( dirname( __FILE__ ) ) );
 	define( 'WHISTLES_STYLES_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
-	define( 'WHISTLES_STYLES_CUSTOM_DIR', WP_CONTENT_DIR . '/whi-styles/' );
-	define( 'WHISTLES_STYLES_CUSTOM_URL', $wp_content_url . '/whi-styles/' );
+	defined( 'WHISTLES_STYLES_CUSTOM_DIR' ) || define( 'WHISTLES_STYLES_CUSTOM_DIR', WP_CONTENT_DIR . '/whi-styles/' );
+	defined( 'WHISTLES_STYLES_CUSTOM_URL' ) || define( 'WHISTLES_STYLES_CUSTOM_URL', $wp_content_url . '/whi-styles/' );
 
 	/* Load, depending on context. */
 	if( is_admin() ) {

@@ -16,6 +16,18 @@ This plugin also allows to incorporate existing external styles for tabs, accord
 
 ## Changelog
 
+### Version 0.6
+
+* New option to define a custom style directory by constants via wp-config.php; fallback to 'wp-content/whi-styles' if not defined.
+
+### Version 0.5
+
+* Solve issues with SSL pages when WP-'siteurl' is defined as non-https.
+
+### Version 0.4
+
+* Enhancement: support SSL pages when WP-'siteurl' is defined as non-https
+
 ### Version 0.3
 
 * Add plugin headers for Github Updater

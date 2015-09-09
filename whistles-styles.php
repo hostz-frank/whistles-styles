@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Whistles Styles
  * Description: Apply styles to tabs, toggles, accordions, created with the great Whistles plugin. Plug in styles and also new types of content collections, like sliders or portfolios.
- * Version: 0.6
+ * Version: 0.7
  * Author: Frank St&uuml;rzebecher <frank@netzklad.de>
  * Author URI: http://netzklad.de
  * GitHub Plugin URI: https://github.com/medizinmedien/whistles-styles
@@ -36,7 +36,7 @@
 
 	/* Path constants. */
 	define( 'WHISTLES_STYLES', '1' );
-	define( 'WHISTLES_STYLES_VERSION', '0.6' );
+	define( 'WHISTLES_STYLES_VERSION', '0.7' );
 	define( 'WHISTLES_STYLES_PLUGIN_DIR', trailingslashit( dirname( __FILE__ ) ) );
 	define( 'WHISTLES_STYLES_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
 	defined( 'WHISTLES_STYLES_CUSTOM_DIR' ) || define( 'WHISTLES_STYLES_CUSTOM_DIR', WP_CONTENT_DIR . '/whi-styles/' );

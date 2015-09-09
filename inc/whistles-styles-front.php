@@ -113,6 +113,19 @@ function whistles_styles_enqueue_styles( $posts ) {
 
 			// Search for available styles in this post.
 			foreach( $types as $type => $its_styles ) {
+
+				// Register the base style to use it as a dependency later.
+				$base_style_file = $styles_directory . $type . '-base.min.css';
+				if( file_exists( WHISTLES_STYLES_CUSTOM_DIR . $type . '-base.min.css' ) ) {
+					wp_register_style( 'whistles-' . $type, $base_style_file, array(), null );
+				}
+
+				// Register base script.
+				$base_style_js = $styles_directory . $type . '-base.min.js';
+				if( file_exists( WHISTLES_STYLES_CUSTOM_DIR . $type . '-base.min.js' ) ) {
+					wp_register_script( 'whistles-' . $type, $base_style_js, array(), null, true );
+				}
+
 				foreach( $its_styles as $style => $files ) {
 					$needle = 'style="' . $style;
 
@@ -120,10 +133,16 @@ function whistles_styles_enqueue_styles( $posts ) {
 					if( stripos( $post->post_content, $needle ) !== false ) {
 						if( isset( $files['css'] ) && !in_array( $files['css'], $processed ) ) {
 
+							// We assume that a 20k+ file contains *all* needed CSS and is a standalone.
+							if( filesize( WHISTLES_STYLES_CUSTOM_DIR . $files['css'] ) > 20000 )
+								$depends_on_base_css = false;
+							else
+								$depends_on_base_css = array( 'whistles-' . $type );
+
 							wp_enqueue_style( 
 								'whistles-' . $style, // handle
 								$styles_directory . $files['css'], // source
-								false, // dependencies
+								$depends_on_base_css, // handle or false
 								WHISTLES_STYLES_VERSION,
 								'all' // media
 							);
@@ -132,10 +151,16 @@ function whistles_styles_enqueue_styles( $posts ) {
 						}
 						if( isset( $files['js'] ) && !in_array( $files['js'], $processed ) ) {
 
+							if( filesize( WHISTLES_STYLES_CUSTOM_DIR . $files['js'] ) > 20000 )
+								$depends_on_base_js = false;
+							else {
+								$depends_on_base_js = array( 'whistles-' . $type );
+							}
+
 							wp_enqueue_script( 
 								'whistles-' . $style, // handle
 								$styles_directory . $files['js'], // source
-								array(), // dependencies
+								$depends_on_base_js, // handle or false
 								WHISTLES_STYLES_VERSION,
 								true // to footer
 							);

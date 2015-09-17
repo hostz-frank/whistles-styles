@@ -127,7 +127,7 @@ function whistles_styles_enqueue_styles( $posts ) {
 				}
 
 				foreach( $its_styles as $style => $files ) {
-					$needle = 'style="' . $style;
+					$needle = 'style="' . $style . '"';
 
 					// Enqueue CSS and JS for found styles only.
 					if( stripos( $post->post_content, $needle ) !== false ) {

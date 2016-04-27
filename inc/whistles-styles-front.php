@@ -112,7 +112,7 @@ function whistles_styles_enqueue_styles( $posts ) {
 			}
 
 			// Define sanitized extra CSS to be injected for all appearing Whistles styles.
-			$regular_extra_css = 'div.no-uppercase-headers-in-whistles-tabs .z-tabs.z-multiline > ul > li > a{text-transform: none;letter-spacing: normal;}';
+			$regular_extra_css = 'div.no-uppercase-headers-in-whistles-tabs .z-tabs.z-multiline > ul.z-tabs-nav > li > a.z-link{text-transform: none;letter-spacing: normal;}';
 			$extra_css = wp_strip_all_tags( apply_filters( 'whistles_styles_extra_css', $regular_extra_css ) );
 
 			// Search for available styles in this post.
